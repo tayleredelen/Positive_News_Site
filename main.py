@@ -1,5 +1,4 @@
 import requests
-import streamlit as st
 from send_email import send_email
 
 
@@ -13,8 +12,12 @@ request = requests.get(url)
 # Get a dictionary with data
 content = request.json()
 
-# Access the article titles and descriptions
+# Access the article titles and description
+body = ""
 for article in content["articles"]:
-    print(article["title"])
-    print(article["description"])
+    if article["title"] is not None:
+        body = body + article["title"] + "\n" + str(article["description"]) + 2*"\n"
+
+body = body.encode("utf-8")
+send_email(message=body)
 
