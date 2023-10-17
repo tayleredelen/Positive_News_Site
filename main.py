@@ -1,4 +1,7 @@
 import requests
+import streamlit as st
+from send_email import send_email
+
 
 api_key = "c0bb248e83674588a3b909f3118faf6d"
 url = ("https://newsapi.org/v2/everything?q=tesla&from=2023-09-16&sortBy=publishedAt&apiKey"
@@ -14,3 +17,4 @@ content = request.json()
 for article in content["articles"]:
     print(article["title"])
     print(article["description"])
+
