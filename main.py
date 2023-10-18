@@ -14,7 +14,7 @@ request = requests.get(url)
 # Get a dictionary with data
 content = request.json()
 
-# Access the article titles and description
+# Access the article titles, description, and url
 body = ""
 for article in content["articles"]:
     if article["title"] is not None:
