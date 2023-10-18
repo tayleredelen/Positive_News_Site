@@ -23,6 +23,7 @@ for article in content["articles"]:
                 + str(article["description"]) +
                 "\n" + article["url"] + 2 * "\n")
 
+
 body = body.encode("utf-8")
 send_email(message=body)
 
