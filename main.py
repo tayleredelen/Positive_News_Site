@@ -27,4 +27,3 @@ for article in content["articles"]:
 body = body.encode("utf-8")
 send_email(message=body)
 
-
