@@ -7,7 +7,7 @@ url = ("https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/2_Sphynx_cats_
 response = requests.get(url)
 
 # write the image into the project, use wb instead of just w
-with open("image.jpg", "wb") as file:
+with open("url_image.jpg", "wb") as file:
     file.write(response.content)
 
 
